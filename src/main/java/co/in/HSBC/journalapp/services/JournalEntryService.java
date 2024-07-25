@@ -1,10 +1,13 @@
 package co.in.HSBC.journalapp.services;
 
 import co.in.HSBC.journalapp.entity.JournalEntry;
+import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.repository.JournalRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,15 +17,29 @@ public class JournalEntryService {
     @Autowired
     private JournalRepository journalRepository;
 
+    @Autowired
+    private UserService userService;
+
     public List<JournalEntry> getAll() {
         return journalRepository.findAll();
+    }
+
+    public void saveEntry(JournalEntry journalEntry, String username) {
+        User user = userService.findUserByUsername(username);
+        journalEntry.setDate(LocalDateTime.now());
+        JournalEntry saved = journalRepository.save(journalEntry);
+        user.getJournalEntries().add(saved);
+        userService.saveUser(user);
     }
 
     public void saveEntry(JournalEntry journalEntry) {
         journalRepository.save(journalEntry);
     }
 
-    public void removeEntry(ObjectId id) {
+    public void removeEntry(ObjectId id, String username) {
+        User user = userService.findUserByUsername(username);
+        user.getJournalEntries().removeIf(x -> x.getId().equals(id));
+        userService.saveUser(user);
         journalRepository.deleteById(id);
     }
 
