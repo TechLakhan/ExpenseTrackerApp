@@ -14,6 +14,11 @@ public class PublicController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/health-check")
+    public String healthcheck() {
+        return "ok";
+    }
+
     @GetMapping("/all-users")
     public List<User> getAllUsers() {
         return userService.getAll();
