@@ -6,6 +6,7 @@ import co.in.HSBC.journalapp.repository.JournalRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,12 +25,19 @@ public class JournalEntryService {
         return journalRepository.findAll();
     }
 
+    @Transactional
     public void saveEntry(JournalEntry journalEntry, String username) {
-        User user = userService.findUserByUsername(username);
-        journalEntry.setDate(LocalDateTime.now());
-        JournalEntry saved = journalRepository.save(journalEntry);
-        user.getJournalEntries().add(saved);
-        userService.saveUser(user);
+        try {
+            User user = userService.findUserByUsername(username);
+            journalEntry.setDate(LocalDateTime.now());
+            JournalEntry saved = journalRepository.save(journalEntry);
+            user.getJournalEntries().add(saved);
+            userService.saveUser(user);
+        }
+        catch (Exception e) {
+            System.out.println(e);
+            throw new RuntimeException("An error occurred while saving the user");
+        }
     }
 
     public void saveEntry(JournalEntry journalEntry) {
