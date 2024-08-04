@@ -34,6 +34,12 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void saveNewAdmin(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRoles(Arrays.asList("USER", "ADMIN"));
+        userRepository.save(user);
+    }
+
     public void removeUser(ObjectId id) {
         userRepository.deleteById(id);
     }
