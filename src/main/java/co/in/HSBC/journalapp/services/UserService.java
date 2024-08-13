@@ -2,6 +2,7 @@ package co.in.HSBC.journalapp.services;
 
 import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,6 +15,7 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 @Component
+@Slf4j
 public class UserService {
 
     private final static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -37,6 +39,11 @@ public class UserService {
             return true;
         }
         catch (Exception e) {
+            log.error("hahahahahaha");
+            log.warn("hahahahaha");
+            log.info("hahahahaha");
+            log.debug("hahahahaha");
+            log.trace("hahahahaha");
             return false;
         }
     }
