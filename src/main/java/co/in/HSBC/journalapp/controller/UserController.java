@@ -1,5 +1,7 @@
 package co.in.HSBC.journalapp.controller;
 
+import co.in.HSBC.journalapp.api.response.WeatherResponse;
+import co.in.HSBC.journalapp.apis.WeatherService;
 import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.repository.UserRepository;
 import co.in.HSBC.journalapp.services.UserService;
@@ -21,6 +23,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private WeatherService weatherService;
+
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -37,5 +42,16 @@ public class UserController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userRepository.deleteByUsername(authentication.getName());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/welcome")
+    public ResponseEntity<?> greetings() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        WeatherResponse weatherResponse = weatherService.getWeatherForecast("Mumbai");
+        String greeting = "";
+        if (weatherResponse != null) {
+            greeting = ", weather feels like " + weatherResponse.getCurrent().getTemperature() + " degree celsius !";
+        }
+        return new ResponseEntity<>("Hi " + authentication.getName() + greeting,  HttpStatus.OK);
     }
 }
