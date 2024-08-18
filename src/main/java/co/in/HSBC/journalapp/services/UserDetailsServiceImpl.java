@@ -1,14 +1,15 @@
-package co.in.HSBC.journalapp.entity;
+package co.in.HSBC.journalapp.services;
 
+import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.repository.UserRepository;
 import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Builder
 public class UserDetailsServiceImpl implements UserDetailsService {
 

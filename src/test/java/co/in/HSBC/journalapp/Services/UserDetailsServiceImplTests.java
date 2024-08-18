@@ -1,7 +1,7 @@
 package co.in.HSBC.journalapp.Services;
 
 import co.in.HSBC.journalapp.entity.User;
-import co.in.HSBC.journalapp.entity.UserDetailsServiceImpl;
+import co.in.HSBC.journalapp.services.UserDetailsServiceImpl;
 import co.in.HSBC.journalapp.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,9 +10,6 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ActiveProfiles;
 

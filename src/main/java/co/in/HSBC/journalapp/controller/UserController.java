@@ -1,7 +1,7 @@
 package co.in.HSBC.journalapp.controller;
 
 import co.in.HSBC.journalapp.api.response.WeatherResponse;
-import co.in.HSBC.journalapp.apis.WeatherService;
+import co.in.HSBC.journalapp.services.WeatherService;
 import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.repository.UserRepository;
 import co.in.HSBC.journalapp.services.UserService;
