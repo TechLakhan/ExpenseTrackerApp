@@ -1,5 +1,6 @@
 package co.in.HSBC.journalapp.controller;
 
+import co.in.HSBC.journalapp.Cache.AppCache;
 import co.in.HSBC.journalapp.entity.User;
 import co.in.HSBC.journalapp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private AppCache appCache;
+
     @GetMapping("/all-users")
     public ResponseEntity<?> getAll() {
         List<User> all = userService.getAll();
@@ -28,5 +32,10 @@ public class AdminController {
     @PostMapping("/create-new-admin")
     public void createUser(@RequestBody User user) {
         userService.saveNewAdmin(user);
+    }
+
+    @GetMapping("clear-app-cache")
+    public void clearAppCache() {
+        appCache.initCache();
     }
 }
