@@ -1,5 +1,6 @@
 package co.in.HSBC.journalapp.entity;
 
+import co.in.HSBC.journalapp.Enums.Sentiment;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -18,6 +19,8 @@ public class JournalEntry {
     private String title;
 
     private String content;
+
+    private Sentiment sentiment;
 
     private LocalDateTime date;
 
