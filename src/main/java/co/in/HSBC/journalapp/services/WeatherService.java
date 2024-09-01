@@ -30,21 +30,19 @@ public class WeatherService {
     private RedisService redisService;
 
     public WeatherResponse getWeatherForecast(String city) {
-        // Check Redis cache first
         WeatherResponse weatherResponse = redisService.get("weather_of_" + city, WeatherResponse.class);
         if (weatherResponse != null) {
             return weatherResponse;
+//            If API is already triggered once then it will provide the same response as weather will be the same for at least an hour.
+        } else {
+            String apiUrlTemplate = appCache.appCache.get(AppCache.keys.weather_api.toString());
+            String finalExternalApi = apiUrlTemplate.replace(CITY, city).replace(API_KEY, apiKey);
+            ResponseEntity<WeatherResponse> response = restTemplate.exchange(finalExternalApi, HttpMethod.GET, null, WeatherResponse.class);
+            WeatherResponse body = response.getBody();
+            if (body != null) {
+                redisService.set("weather_of_" + city, body, 300L);
+            }
+            return body;
         }
-        // Retrieve and verify API URL template from cache
-        String apiUrlTemplate = appCache.appCache.get(AppCache.keys.weather_api.toString());
-        // Replace placeholders with actual values
-        String finalExternalApi = apiUrlTemplate.replace(CITY, city).replace(API_KEY, apiKey);
-
-        // Fetch weather data from external API
-        ResponseEntity<WeatherResponse> response = restTemplate.exchange(finalExternalApi, HttpMethod.GET, null, WeatherResponse.class);
-        WeatherResponse body = response.getBody();
-
-        redisService.set("weather_of_" + city, body, 300L);
-        return body;
     }
 }
