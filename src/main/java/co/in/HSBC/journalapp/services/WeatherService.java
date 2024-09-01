@@ -1,7 +1,6 @@
 package co.in.HSBC.journalapp.services;
 
 import co.in.HSBC.journalapp.Cache.AppCache;
-import co.in.HSBC.journalapp.Constants.PlaceHolders;
 import co.in.HSBC.journalapp.api.response.WeatherResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,6 @@ public class WeatherService {
 
     @Autowired
     private RedisService redisService;
-
-//    private static final String apiUrl = "http://api.weatherstack.com/current?access_key={apiKey}&query={city}";
 
     public WeatherResponse getWeatherForecast(String city) {
         // Check Redis cache first
