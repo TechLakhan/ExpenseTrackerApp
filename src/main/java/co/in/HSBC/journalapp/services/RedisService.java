@@ -13,13 +13,16 @@ import java.util.concurrent.TimeUnit;
 public class RedisService {
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate redisTemplate;
 
     public <T> T get(String key, Class<T> entityClass) {
         try {
             Object o = redisTemplate.opsForValue().get(key);
+            if (o == null) {
+                log.warn("No data found for key: {}", key);
+                return null;
+            }
             ObjectMapper mapper = new ObjectMapper();
-            assert o != null;
             return mapper.readValue(o.toString(), entityClass);
         } catch (Exception e) {
             log.error("Exception while fetching data to redis", e);
@@ -32,6 +35,7 @@ public class RedisService {
             ObjectMapper objectMapper = new ObjectMapper();
             String jsonValue = objectMapper.writeValueAsString(o);
             redisTemplate.opsForValue().set(key, jsonValue, ttl, TimeUnit.SECONDS);
+            log.info("Successfully cached data in Redis for key: {} with TTL: {} seconds", key, ttl);
         } catch (Exception e) {
             log.error("Exception occured while setting data to redis ", e);
         }
