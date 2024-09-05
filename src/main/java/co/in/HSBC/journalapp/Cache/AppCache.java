@@ -14,7 +14,7 @@ import java.util.Map;
 public class AppCache {
 
     public enum keys {
-        WEATHER_API;
+        weather_api;
     }
 
     @Autowired

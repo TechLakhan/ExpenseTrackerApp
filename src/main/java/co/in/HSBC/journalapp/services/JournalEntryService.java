@@ -66,7 +66,6 @@ public class JournalEntryService {
     public Optional<JournalEntry> findById(ObjectId id) {
         return journalRepository.findById(id);
     }
-
     // Test method to run a minimal query
     public void testQuery() {
         Optional<JournalEntry> entry = journalRepository.findById(new ObjectId("6694005e274d10098f7eff58"));

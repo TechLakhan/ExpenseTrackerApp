@@ -38,11 +38,7 @@ public class UserService {
             return true;
         }
         catch (Exception e) {
-            log.error("hahahahahaha");
-            log.warn("hahahahaha");
-            log.info("hahahahaha");
-            log.debug("hahahahaha");
-            log.trace("hahahahaha");
+            log.error("Exception occured ", e);
             return false;
         }
     }
