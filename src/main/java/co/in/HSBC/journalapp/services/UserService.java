@@ -53,6 +53,14 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public User authenticateUser(String email, String password) throws Exception {
+        User user = userRepository.findUserByEmail(email);
+        if ( user == null || !passwordEncoder.matches(password, user.getPassword())) {
+            throw new Exception("Invalid Credentials");
+        }
+        return user;
+    }
+
     public Optional<User> getUserById(ObjectId id) {
         return userRepository.findById(id);
     }
