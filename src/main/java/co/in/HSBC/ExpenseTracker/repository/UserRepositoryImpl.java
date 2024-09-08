@@ -16,7 +16,7 @@ public class UserRepositoryImpl {
     public List<User> getUsersWithQueries() {
         Query query = new Query();
         query.addCriteria(Criteria.where("email").exists(true).ne(null));
-//        query.addCriteria(Criteria.where("notificationEnabled").is(true));
+        query.addCriteria(Criteria.where("notificationEnabled").is(true));
         List<User> users = mongoTemplate.find(query, User.class);
         return users;
     }

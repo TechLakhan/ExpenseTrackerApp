@@ -14,6 +14,7 @@ public class EmailServiceTests {
 
     @Test
     public void testMailSender() {
-        emailService.mailSender(User.builder().build(),"shreep300@gmail.com", "Welcome To Journal App.", "Hi Shree, We welcome you to our journal application. Don't' forget to share it with your friends.");
+        User lakhan = User.builder().username("Lakhan").password("abcd").email("lakhan.patil008@gmail.com").build();
+        emailService.mailSender(lakhan,"shreep300@gmail.com", "Welcome To Journal App.", "Hi Shree, We welcome you to our daily expense tracker application. Don't' forget to share it with your friends & keep tracking your expenses.");
     }
 }

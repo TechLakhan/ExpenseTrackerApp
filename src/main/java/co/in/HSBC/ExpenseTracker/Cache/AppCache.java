@@ -25,8 +25,8 @@ public class AppCache {
     @PostConstruct
     public void initCache() {
         appCache = new HashMap<>();
-        List<ConfigExpense> keys = configJournalAppRepo.findAll();
-        for (ConfigExpense configExpense : keys) {
+        List<ConfigExpense> key = configJournalAppRepo.findAll();
+        for (ConfigExpense configExpense : key) {
             appCache.put(configExpense.getKey(), configExpense.getValue());
         }
     }
