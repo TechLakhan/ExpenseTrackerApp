@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.in.HSBC</groupId>
-	<artifactId>journalapp</artifactId>
+	<artifactId>Daily_Expense_Tracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Journal app</name>
 	<description>E2EE Journal App</description>
