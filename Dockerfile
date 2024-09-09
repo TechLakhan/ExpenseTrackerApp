@@ -19,7 +19,7 @@ COPY src ./src
 RUN ./mvnw package -DskipTests
 
 # Expose the port the app runs on
-EXPOSE 8081
+EXPOSE 8080
 
 # Set the entry point to run the JAR file
 CMD ["java", "-jar", "target/Daily_Expense_Tracker-0.0.1-SNAPSHOT.jar"]
