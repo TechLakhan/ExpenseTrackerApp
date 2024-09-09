@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,8 +32,15 @@ public class ExpenseService {
     public void saveNewExpenditure(Expense expenditure, String username) {
         try {
             User user = userService.findUserByUsername(username);
+            if (user == null) {
+                log.error("User with username {} not found", username);
+                throw new RuntimeException("User not found with the given username: " + username);
+            }
             expenditure.setDate(LocalDateTime.now());
             Expense saved = expenseRepository.save(expenditure);
+            if (user.getExpenses() == null) {
+                user.setExpenses(new ArrayList<>());  // Initialize if null
+            }
             user.getExpenses().add(saved);
             userService.saveUser(user);
         }
