@@ -22,7 +22,7 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auth/api")
 @Slf4j
 public class PublicController {
 

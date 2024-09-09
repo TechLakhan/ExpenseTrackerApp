@@ -22,7 +22,7 @@ public class AdminController {
     @Autowired
     private AppCache appCache;
 
-    @GetMapping("/all-users")
+    @GetMapping("/allUsers/api")
     public ResponseEntity<?> getAll() {
         List<User> all = userService.getAll();
         if ( all != null && !all.isEmpty()) {
@@ -31,7 +31,7 @@ public class AdminController {
         return null;
     }
 
-    @PostMapping("/create-new-admin")
+    @PostMapping("/createNewAdmin")
     public void createUser(@RequestBody User user) {
         userService.saveNewAdmin(user);
         log.info("New admin user is created.");

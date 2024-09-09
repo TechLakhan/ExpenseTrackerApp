@@ -1,6 +1,6 @@
 package co.in.HSBC.ExpenseTracker.services;
 
-import Exceptions.UserAlreadyExistsException;
+import co.in.HSBC.ExpenseTracker.Exceptions.UserAlreadyExistsException;
 import co.in.HSBC.ExpenseTracker.entity.User;
 import co.in.HSBC.ExpenseTracker.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Executable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

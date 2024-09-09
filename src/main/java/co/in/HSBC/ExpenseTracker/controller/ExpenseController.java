@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/journal")
+@RequestMapping("/expense/api")
 @Slf4j
 public class ExpenseController {
 
