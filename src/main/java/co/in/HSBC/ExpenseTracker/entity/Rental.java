@@ -2,17 +2,22 @@ package co.in.HSBC.ExpenseTracker.entity;
 
 import lombok.*;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Document(collection = "Expenses")
+@Document(collection = "Rentals")
 @Data
 @NoArgsConstructor
-public class Expense {
+public class Rental {
+
+    @Autowired
+    private Car car;
+
     @Id
-    private ObjectId id;
+    private ObjectId rentalId;
 
     private double amount;
 
@@ -23,4 +28,9 @@ public class Expense {
 
     private LocalDateTime date;
 
+    private double rentalDays;
+
+    public double totalPrice() {
+        return car.getPricePerDay()*rentalDays;
+    }
 }

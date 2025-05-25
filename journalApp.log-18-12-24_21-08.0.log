@@ -1,0 +1,246 @@
+24-12-18 21:08:08.279 [main] INFO  c.i.H.ExpenseTracker.ExpenseTracker ----- Starting ExpenseTracker using Java 17.0.10 with PID 13456 (C:\Users\patil\IdeaProjects\ExpenseTrackerApp\target\classes started by patil in C:\Users\patil\IdeaProjects\ExpenseTrackerApp) 
+24-12-18 21:08:08.286 [main] INFO  c.i.H.ExpenseTracker.ExpenseTracker ----- The following 1 profile is active: "develop" 
+24-12-18 21:08:09.562 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Multiple Spring Data modules found, entering strict repository configuration mode 
+24-12-18 21:08:09.564 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Bootstrapping Spring Data MongoDB repositories in DEFAULT mode. 
+24-12-18 21:08:09.863 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Finished Spring Data repository scanning in 290 ms. Found 3 MongoDB repository interfaces. 
+24-12-18 21:08:09.894 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Multiple Spring Data modules found, entering strict repository configuration mode 
+24-12-18 21:08:09.896 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+24-12-18 21:08:09.925 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport ----- Spring Data Redis - Could not safely identify store assignment for repository candidate interface co.in.HSBC.ExpenseTracker.repository.ConfigExpenseAppRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository 
+24-12-18 21:08:09.925 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport ----- Spring Data Redis - Could not safely identify store assignment for repository candidate interface co.in.HSBC.ExpenseTracker.repository.ExpenseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository 
+24-12-18 21:08:09.926 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport ----- Spring Data Redis - Could not safely identify store assignment for repository candidate interface co.in.HSBC.ExpenseTracker.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository 
+24-12-18 21:08:09.926 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ----- Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces. 
+24-12-18 21:08:10.721 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ----- Tomcat initialized with port 8080 (http) 
+24-12-18 21:08:10.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol ----- Initializing ProtocolHandler ["http-nio-8080"] 
+24-12-18 21:08:10.735 [main] INFO  o.a.catalina.core.StandardService ----- Starting service [Tomcat] 
+24-12-18 21:08:10.735 [main] INFO  o.a.catalina.core.StandardEngine ----- Starting Servlet engine: [Apache Tomcat/10.1.25] 
+24-12-18 21:08:10.809 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ----- Initializing Spring embedded WebApplicationContext 
+24-12-18 21:08:10.809 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ----- Root WebApplicationContext: initialization completed in 2437 ms 
+24-12-18 21:08:10.991 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter ----- Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\patil\IdeaProjects\ExpenseTrackerApp\target\classes\co\in\HSBC\ExpenseTracker\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepositoryImpl': Unsatisfied dependency expressed through field 'mongoTemplate': Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryDependentConfiguration.class]: Unsatisfied dependency expressed through method 'mongoTemplate' parameter 0: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net 
+24-12-18 21:08:11.037 [main] INFO  o.a.catalina.core.StandardService ----- Stopping service [Tomcat] 
+24-12-18 21:08:11.045 [main] WARN  o.a.c.loader.WebappClassLoaderBase ----- The web application [ROOT] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176) 
+24-12-18 21:08:11.049 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext ----- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server 
+24-12-18 21:08:11.061 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger ----- 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+24-12-18 21:08:11.089 [main] ERROR o.s.boot.SpringApplication ----- Application run failed 
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at co.in.HSBC.ExpenseTracker.ExpenseTracker.main(ExpenseTracker.java:19)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\patil\IdeaProjects\ExpenseTrackerApp\target\classes\co\in\HSBC\ExpenseTracker\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepositoryImpl': Unsatisfied dependency expressed through field 'mongoTemplate': Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryDependentConfiguration.class]: Unsatisfied dependency expressed through method 'mongoTemplate' parameter 0: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4414)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\patil\IdeaProjects\ExpenseTrackerApp\target\classes\co\in\HSBC\ExpenseTracker\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepositoryImpl': Unsatisfied dependency expressed through field 'mongoTemplate': Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryDependentConfiguration.class]: Unsatisfied dependency expressed through method 'mongoTemplate' parameter 0: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl': Unsatisfied dependency expressed through field 'mongoTemplate': Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryDependentConfiguration.class]: Unsatisfied dependency expressed through method 'mongoTemplate' parameter 0: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryDependentConfiguration.class]: Unsatisfied dependency expressed through method 'mongoTemplate' parameter 0: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 85 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoDatabaseFactoryConfiguration.class]: Unsatisfied dependency expressed through method 'mongoDatabaseFactory' parameter 0: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 98 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 112 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception with message: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 126 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'standardMongoSettingsCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration$MongoClientSettingsConfiguration.class]: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1167)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1696)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1470)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2192)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 127 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.mongo.StandardMongoClientSettingsBuilderCustomizer]: Factory method 'standardMongoSettingsCustomizer' threw exception with message: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 149 common frames omitted
+Caused by: com.mongodb.MongoConfigurationException: Failed looking up TXT record for host journalappcluster.isnzo8y.mongodb.net
+	at com.mongodb.internal.dns.DefaultDnsResolver.resolveAdditionalQueryParametersFromTxtRecords(DefaultDnsResolver.java:137)
+	at com.mongodb.ConnectionString.<init>(ConnectionString.java:434)
+	at com.mongodb.ConnectionString.<init>(ConnectionString.java:321)
+	at org.springframework.boot.autoconfigure.mongo.PropertiesMongoConnectionDetails.getConnectionString(PropertiesMongoConnectionDetails.java:47)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration$MongoClientSettingsConfiguration.standardMongoSettingsCustomizer(MongoAutoConfiguration.java:74)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 150 common frames omitted
+Caused by: com.mongodb.spi.dns.DnsException: DNS error
+	at com.mongodb.internal.dns.JndiDnsClient.getResourceRecordData(JndiDnsClient.java:54)
+	at com.mongodb.internal.dns.DefaultDnsResolver.resolveAdditionalQueryParametersFromTxtRecords(DefaultDnsResolver.java:118)
+	... 159 common frames omitted
+Caused by: javax.naming.CommunicationException: DNS error
+	at jdk.naming.dns/com.sun.jndi.dns.DnsClient.query(DnsClient.java:316)
+	at jdk.naming.dns/com.sun.jndi.dns.Resolver.query(Resolver.java:81)
+	at jdk.naming.dns/com.sun.jndi.dns.DnsContext.c_getAttributes(DnsContext.java:434)
+	at java.naming/com.sun.jndi.toolkit.ctx.ComponentDirContext.p_getAttributes(ComponentDirContext.java:235)
+	at java.naming/com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.getAttributes(PartialCompositeDirContext.java:141)
+	at java.naming/com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.getAttributes(PartialCompositeDirContext.java:129)
+	at java.naming/javax.naming.directory.InitialDirContext.getAttributes(InitialDirContext.java:171)
+	at com.mongodb.internal.dns.JndiDnsClient.getResourceRecordData(JndiDnsClient.java:41)
+	... 160 common frames omitted
+Caused by: java.net.PortUnreachableException: null
+	at java.base/sun.nio.ch.DatagramChannelImpl.receive0(Native Method)
+	at java.base/sun.nio.ch.DatagramChannelImpl.receiveIntoNativeBuffer(DatagramChannelImpl.java:750)
+	at java.base/sun.nio.ch.DatagramChannelImpl.receive(DatagramChannelImpl.java:728)
+	at java.base/sun.nio.ch.DatagramChannelImpl.trustedBlockingReceive(DatagramChannelImpl.java:699)
+	at java.base/sun.nio.ch.DatagramChannelImpl.blockingReceive(DatagramChannelImpl.java:633)
+	at java.base/sun.nio.ch.DatagramSocketAdaptor.receive(DatagramSocketAdaptor.java:240)
+	at java.base/java.net.DatagramSocket.receive(DatagramSocket.java:700)
+	at jdk.naming.dns/com.sun.jndi.dns.DnsClient.doUdpQuery(DnsClient.java:425)
+	at jdk.naming.dns/com.sun.jndi.dns.DnsClient.query(DnsClient.java:214)
+	... 167 common frames omitted

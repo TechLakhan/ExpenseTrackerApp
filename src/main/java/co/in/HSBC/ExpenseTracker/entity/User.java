@@ -34,7 +34,7 @@ public class User {
     private String password;
 
     @DBRef
-    private List<Expense> expenses = new ArrayList<>(); // Fixed naming to lowercase
+    private List<Rental> expenses = new ArrayList<>(); // Fixed naming to lowercase
 
     private boolean notificationEnabled;
 

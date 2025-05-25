@@ -50,17 +50,9 @@ public class PublicController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
-
         try {
             boolean newUser = userService.saveNewUser(user);
-            if (newUser) {
-                String jwt = jwtUtil.generateToken(user.getUsername());
-                HttpHeaders headers = new HttpHeaders();
-                headers.add("X-ExpenseTracker-Reg-JWT", jwt);
-                return new ResponseEntity<>("User registered successfully. Welcome to Expense Tracker !" + headers, HttpStatus.CREATED);
-            } else {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("User already exists.");
-            }
+            return new ResponseEntity<>("User registered successfully. Welcome to Expense Tracker !", HttpStatus.CREATED);
         }  catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occured while registering the user.");
         }

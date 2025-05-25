@@ -1,0 +1,63 @@
+24-10-10 16:06:05.276 [cluster-ClusterId{value='66e708141ab3f15984f66c67', description='JournalAppCluster'}-ac-he86qpa-shard-00-02.isnzo8y.mongodb.net:27017] INFO  org.mongodb.driver.cluster ----- Exception in monitor thread while connecting to server ac-he86qpa-shard-00-02.isnzo8y.mongodb.net:27017 
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:84)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:84)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:211)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketException: Network is unreachable: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:78)
+	... 4 common frames omitted
+24-10-10 16:06:05.304 [cluster-ClusterId{value='66e708141ab3f15984f66c67', description='JournalAppCluster'}-ac-he86qpa-shard-00-01.isnzo8y.mongodb.net:27017] INFO  org.mongodb.driver.cluster ----- Exception in monitor thread while connecting to server ac-he86qpa-shard-00-01.isnzo8y.mongodb.net:27017 
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:84)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:84)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:211)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketException: Network is unreachable: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:78)
+	... 4 common frames omitted
+24-10-10 16:06:05.289 [cluster-ClusterId{value='66e708141ab3f15984f66c67', description='JournalAppCluster'}-ac-he86qpa-shard-00-00.isnzo8y.mongodb.net:27017] INFO  org.mongodb.driver.cluster ----- Exception in monitor thread while connecting to server ac-he86qpa-shard-00-00.isnzo8y.mongodb.net:27017 
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:84)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:84)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:211)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketException: Network is unreachable: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:78)
+	... 4 common frames omitted
